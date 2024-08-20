@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express = require('express');
 const authRoutes = require('./routes/auth');
 const getKeys = require('./routes/keys');
@@ -7,6 +8,8 @@ const getAdminKeys = require('./admin/getAllKeys')
 const app = express();
 
 app.use(express.json());
+
+app.use(cors());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/key', getKeys);
