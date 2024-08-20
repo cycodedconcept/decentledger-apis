@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const secretKey = process.env.JWT_SECRET;
-if (!secretKey) console.log('JWT secret key not set. Check your .env file.');
+if (!secretKey) console.log('JWT secret key not set');
 
 module.exports = function(req, res, next) {
     const authHeader = req.headers['authorization'];
